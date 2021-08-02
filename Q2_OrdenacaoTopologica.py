@@ -1,7 +1,7 @@
 from grafoDirigido import GrafoDirigido
 
 
-def imprimirDFS(O):
+def imprimirDFS(O): # O é a ordenação topológica
     output = ''
     for v in O:
         output += f"{v.rotulo} -> "
@@ -10,24 +10,24 @@ def imprimirDFS(O):
 
 
 def DFS(G):
-    C = []
-    O = []
+    C = []  # Lista de vértices visitados
+    O = []  # Ordenação topológica
     for u in G.vertices:
-        if u not in C:
+        if u not in C:  # Se u não estiver na lista
             DFS_Visit_OT(G, u, C, O)
     return O
 
 
 def DFS_Visit_OT(G, v, C, O):
-    C.append(v)
-    for u in G.vizinhos(v):
-        if u not in C:
+    C.append(v) # Adiciona v na lista de visitados
+    for u in G.vizinhos(v): # Para cada vizinho de u
+        if u not in C:  # Se u não estiver na lista
             DFS_Visit_OT(G, u, C, O)
 
     O.insert(0, v)
 
 
 grafo = GrafoDirigido()
-grafo.ler("GrafosTeste/manha.net")
-dfs = DFS(grafo)
-imprimirDFS(dfs)
+grafo.ler("GrafosTeste/manha.net")  # Diretório do arquivo
+dfs = DFS(grafo)    # Cria ordenação topológica
+imprimirDFS(dfs)    # Imprime ordenação topológica conforme padrão definido
