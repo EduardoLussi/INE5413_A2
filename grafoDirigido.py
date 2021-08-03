@@ -23,6 +23,10 @@ class GrafoDirigido:
         self.vertices = []
         self.arcos = []
 
+    # Definir a lista de vértices através de outra lista já criada
+    def definirVertices(self, V):
+        self.vertices = V
+
     # Insere um vértice v já criado
     def inserirVertice(self, v):
         self.vertices.append(v)
