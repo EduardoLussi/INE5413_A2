@@ -82,8 +82,3 @@ def printCFCHelper(tamanho, i, A, R):
     for j in range(0, tamanho):
         if A[j] is not None and A[j].indice == indice:
             printCFCHelper(tamanho, j, A, R)
-
-
-grafo = GrafoDirigido()
-grafo.ler("GrafosTeste/teste_de_mesa_CFC.net")  # Diretório do arquivo
-CFC(grafo)
