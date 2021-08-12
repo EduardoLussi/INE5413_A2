@@ -73,7 +73,7 @@ def printCFC(A):
         if A[i] is None:
             R = []
             printCFCHelper(tamanho, i, A, R)
-            print(sorted(R))
+            print(str(sorted(R))[1:-1].replace(" ", ""))
 
 
 def printCFCHelper(tamanho, i, A, R):
