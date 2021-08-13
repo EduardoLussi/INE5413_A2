@@ -21,11 +21,11 @@ def DFS(G):
     tamanho = G.qtdVertices()
 
     # Inicialização dos vetores
-    C = [False] * tamanho
-    T = [inf] * tamanho
-    F = [inf] * tamanho
-    A = [None] * tamanho
-    tempo = [0]
+    C = [False] * tamanho  # Vértices já conhecidos
+    T = [inf] * tamanho  # Tempos de início das visitas
+    F = [inf] * tamanho  # Tempos de término das visitas
+    A = [None] * tamanho  # Ancestrais da árvore de busca em profundidade
+    tempo = [0]  # Variável que armazena o tempo atual da busca
 
     for u in G.vertices:  # Para cada vizinho de u
         if not(C[u.indice-1]):  # Se u não for conhecido
@@ -37,11 +37,11 @@ def DFS_adaptado(G, Fd):
     tamanho = G.qtdVertices()
 
     # Inicialização dos vetores
-    C = [False] * tamanho
-    T = [inf] * tamanho
-    F = [inf] * tamanho
-    A = [None] * tamanho
-    tempo = [0]
+    C = [False] * tamanho  # Vértices já conhecidos
+    T = [inf] * tamanho  # Tempos de início das visitas
+    F = [inf] * tamanho  # Tempos de término das visitas
+    A = [None] * tamanho  # Ancestrais da árvore de busca em profundidade
+    tempo = [0]  # Variável que armazena o tempo atual da busca
 
     for i in range(0, tamanho):
         # Parâmetros para manter a ordem decrescente de F
